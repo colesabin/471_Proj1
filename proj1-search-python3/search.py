@@ -4,7 +4,7 @@
 # educational purposes provided that (1) you do not distribute or publish
 # solutions, (2) you retain this notice, and (3) you provide clear
 # attribution to UC Berkeley, including a link to http://ai.berkeley.edu.
-# 
+#
 # Attribution Information: The Pacman AI projects were developed at UC Berkeley.
 # The core projects and autograders were primarily created by John DeNero
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
@@ -81,12 +81,19 @@ def depthFirstSearch(problem):
 
     To get started, you might want to try some of these simple commands to
     understand the search problem that is being passed in:
-
+    """
     print("Start:", problem.getStartState())
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
-    """
+
     "*** YOUR CODE HERE ***"
+    from util import Stack
+    closed = {}
+    fringe = Stack()
+    fringe.push(problem.getSuccessors(problem.getStartState()))
+    while fringe.isEmpty() == False:
+        print("STACK POP", fringe.pop())
+
     util.raiseNotDefined()
 
 def breadthFirstSearch(problem):
